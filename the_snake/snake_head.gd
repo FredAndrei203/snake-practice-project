@@ -22,6 +22,7 @@ func _record_last_input() -> void:
 
 func _on_game_proper_new_interval() -> void:
 	move_part()
+	order_proceeding_part()
 
 func is_cardinal_direction(input: Vector2) -> bool:
 	return input == Vector2.UP or input == Vector2.DOWN or input == Vector2.LEFT or input == Vector2.RIGHT

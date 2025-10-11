@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bqmcafhldiop1"]
 
-[ext_resource type="Script" uid="uid://cjnhxtk7ucaef" path="res://game_proper.gd" id="1_yaumu"]
+[ext_resource type="Script" uid="uid://cjnhxtk7ucaef" path="res://the_game_proper/game_proper.gd" id="1_yaumu"]
 [ext_resource type="PackedScene" uid="uid://cl0p6pi3uj7di" path="res://the_gridmap/grid_play_area.tscn" id="2_poqan"]
 [ext_resource type="PackedScene" uid="uid://desrd4yvv7q25" path="res://the_snake/snake_head.tscn" id="3_c1pul"]
 [ext_resource type="PackedScene" uid="uid://073xy8ds4wuu" path="res://the_snake/snake_segment.tscn" id="4_5yf71"]

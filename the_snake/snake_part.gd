@@ -14,10 +14,10 @@ func move_part() -> void:
 	position += scalar_speed * current_direction
 	var angle = current_direction.angle()
 	%SnakePartDesign.rotation = angle
-	order_proceeding_part()
 
 func order_proceeding_part() -> void:
 	if proceeding_part == null:
 		return
 	proceeding_part.move_part()
+	proceeding_part.order_proceeding_part()
 	proceeding_part.direction_input = direction_input
