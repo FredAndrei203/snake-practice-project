@@ -1,0 +1,120 @@
+[gd_scene load_steps=3 format=3 uid="uid://desrd4yvv7q25"]
+
+[ext_resource type="PackedScene" uid="uid://dtdyrk8ol3bqm" path="res://the_snake/snake_part.tscn" id="1_gkmwg"]
+[ext_resource type="Script" uid="uid://dounk27wyepxm" path="res://the_snake/snake_head.gd" id="2_idn06"]
+
+[node name="SnakeHead" instance=ExtResource("1_gkmwg")]
+script = ExtResource("2_idn06")
+
+[node name="Head" type="ColorRect" parent="SnakePartDesign" index="0"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.5, 2.5)
+color = Color(5.5350364e-07, 0.29134837, 0.11453258, 1)
+
+[node name="Eye1" type="ColorRect" parent="SnakePartDesign" index="1"]
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.233
+anchor_bottom = 0.5
+offset_left = 13.000001
+offset_top = -12.000001
+offset_right = 18.0
+offset_bottom = -10.000001
+grow_vertical = 2
+scale = Vector2(2.5, 2.5)
+color = Color(0, 0, 0, 1)
+
+[node name="Eye2" type="ColorRect" parent="SnakePartDesign" index="2"]
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.233
+anchor_bottom = 0.5
+offset_left = 12.999999
+offset_top = 6.999999
+offset_right = 18.0
+offset_bottom = 8.999999
+grow_vertical = 2
+scale = Vector2(2.5, 2.5)
+color = Color(0, 0, 0, 1)
+
+[node name="Tongue" type="ColorRect" parent="SnakePartDesign" index="3"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 24.999996
+offset_top = -3.0
+offset_right = 29.999996
+offset_bottom = -0.6000004
+grow_vertical = 2
+scale = Vector2(2.5, 2.5)
+color = Color(0.39581704, 0, 0.03936672, 1)
+
+[node name="HalfStripe" type="ColorRect" parent="SnakePartDesign" index="4"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.000002
+offset_top = -10.0
+offset_right = -23.000002
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.5, 2.5)
+color = Color(0, 0.24705882, 0.09411765, 1)
+
+[node name="Stripes" type="ColorRect" parent="SnakePartDesign" index="5"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = 5.0
+offset_right = -14.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.5, 2.5)
+color = Color(0, 0.24705882, 0.09411765, 1)
+
+[node name="Stripes2" type="ColorRect" parent="SnakePartDesign" index="6"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.000002
+offset_top = -25.0
+offset_right = -14.000002
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.5, 2.5)
+color = Color(0, 0.24705882, 0.09411765, 1)
+
+[node name="Stripes3" type="ColorRect" parent="SnakePartDesign" index="7"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.000003
+offset_top = -10.000001
+offset_right = -1.0000029
+offset_bottom = -2.000001
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.5, 2.5)
+color = Color(0, 0.24705882, 0.09411765, 1)

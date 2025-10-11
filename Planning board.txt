@@ -1,0 +1,44 @@
+Create snake
+How?
+Snake can move and eat apples.
+Snake grow when eating apple.
+Wins when whole screen is covered with snek.
+
+How does snake move?
+Snake can move in four cardinal directions.
+Snake loops around the stage when going to the edges.
+It moves discretely, not continuously. So every n seconds.
+
+How does snake eat apple?
+Apple is an Area2D. When it detects the snake head, it is considered eaten.
+Snake also detects the apple and counts it as eaten.
+The apple then dissapears.
+
+How does the apple appear?
+It appears anywhere that is not occupied by the snake.
+
+One more thing.
+The stage is a grid of A by B units so movement and spawning is consistent.
+
+How does the body follow the snake?
+Each part of the snake is its own object.
+The snake head, and many snake segments.
+The snake segments just follow the movement of the precedding segment.
+
+How does the snake spawn additional body segments?
+The new body segments always spawn just right behind the snake head.
+That means the other body segments will pause for one time for that to happen.
+
+How to detect if whole screen has snek all over?
+We create object called grid.
+That is essentially the parts of the playing field.
+The stage will detect if all grid has snake.
+
+How does snake lose?
+If the grid it is about to move on has a body segment, game over.
+
+How exactly is movement done?
+So, the snake moves discretely, at an interval.
+At the end of the interval, the snake looks what is the last arrow key held.
+That is where it will move.
+If not arrow key is held, it will go to the same direction as previously.

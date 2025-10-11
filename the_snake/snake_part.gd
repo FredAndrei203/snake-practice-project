@@ -1,0 +1,1 @@
+class_name SnakePart extends CharacterBody2D

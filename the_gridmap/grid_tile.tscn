@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbvgkw3n518oq"]
+
+[ext_resource type="Script" uid="uid://csvv4i3wrn581" path="res://the_gridmap/grid_tile.gd" id="1_iccmt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wq6ou"]
+size = Vector2(50, 50)
+
+[node name="GridTile" type="Area2D"]
+script = ExtResource("1_iccmt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wq6ou")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(3.946722e-06, 0.8986741, 0.39418718, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.9336132, 0.4113204, 1)

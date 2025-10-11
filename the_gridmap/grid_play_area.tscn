@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl0p6pi3uj7di"]
+
+[ext_resource type="Script" uid="uid://bw000nms31jjn" path="res://the_gridmap/grid_play_area.gd" id="1_7amch"]
+
+[node name="GridPlayArea" type="Node2D"]
+script = ExtResource("1_7amch")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+top_level = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5121481, 0, 0.051975735, 1)
