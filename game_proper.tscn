@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqmcafhldiop1"]
+[gd_scene load_steps=5 format=3 uid="uid://bqmcafhldiop1"]
 
 [ext_resource type="Script" uid="uid://cjnhxtk7ucaef" path="res://game_proper.gd" id="1_yaumu"]
 [ext_resource type="PackedScene" uid="uid://cl0p6pi3uj7di" path="res://the_gridmap/grid_play_area.tscn" id="2_poqan"]
+[ext_resource type="PackedScene" uid="uid://desrd4yvv7q25" path="res://the_snake/snake_head.tscn" id="3_c1pul"]
+[ext_resource type="PackedScene" uid="uid://073xy8ds4wuu" path="res://the_snake/snake_segment.tscn" id="4_5yf71"]
 
 [node name="GameProper" type="Node2D"]
 script = ExtResource("1_yaumu")
@@ -9,3 +11,20 @@ script = ExtResource("1_yaumu")
 [node name="GridPlayArea" parent="." instance=ExtResource("2_poqan")]
 unique_name_in_owner = true
 position = Vector2(576, 324)
+
+[node name="IntervalTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.3
+autostart = true
+
+[node name="SnakeHead" parent="." instance=ExtResource("3_c1pul")]
+unique_name_in_owner = true
+
+[node name="SnakeSegment" parent="." instance=ExtResource("4_5yf71")]
+unique_name_in_owner = true
+
+[node name="SnakeSegment2" parent="." instance=ExtResource("4_5yf71")]
+unique_name_in_owner = true
+
+[connection signal="new_interval" from="." to="SnakeHead" method="_on_game_proper_new_interval"]
+[connection signal="timeout" from="IntervalTimer" to="." method="_on_interval_timer_timeout"]
