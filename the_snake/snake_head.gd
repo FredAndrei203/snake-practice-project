@@ -1,5 +1,8 @@
 class_name SnakeHead extends SnakePart
 
+signal snake_died
+var has_eaten_apple: bool = false
+
 func _ready() -> void:
 	direction_input = Vector2.RIGHT
 	current_direction = Vector2.RIGHT
@@ -23,6 +26,16 @@ func _record_last_input() -> void:
 func _on_game_proper_new_interval() -> void:
 	move_part()
 	order_proceeding_part()
+	if has_eaten_apple:
+		has_eaten_apple = false
+		add_new_part()
 
 func is_cardinal_direction(input: Vector2) -> bool:
 	return input == Vector2.UP or input == Vector2.DOWN or input == Vector2.LEFT or input == Vector2.RIGHT
+
+
+func _on_snake_hitbox_area_entered(area: Area2D) -> void:
+	if area is Apple:
+		has_eaten_apple = true
+	elif area is SnakeHitbox or area is AntiSnakeHurtbox:
+		snake_died.emit()

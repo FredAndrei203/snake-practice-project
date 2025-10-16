@@ -118,3 +118,5 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2.5, 2.5)
 color = Color(0, 0.24705882, 0.09411765, 1)
+
+[connection signal="area_entered" from="SnakeHitbox" to="." method="_on_snake_hitbox_area_entered"]

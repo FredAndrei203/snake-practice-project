@@ -6,7 +6,7 @@ var grid_tiles: Array[GridTile]
 var grid_size: Vector2
 
 func set_up_grid() -> void:
-	var tile_size: float = 50
+	var tile_size: float = GameProper.distance_per_tile
 	var starting_point: Vector2 = global_position - (grid_size * tile_size) / 2 + Vector2(tile_size, tile_size) / 2
 	for y in range(grid_size.y):
 		for x in range(grid_size.x):
