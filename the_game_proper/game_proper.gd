@@ -6,9 +6,10 @@ static var distance_per_tile: float = 51
 
 func _ready() -> void:
 	%GridPlayArea.grid_size = Vector2(20, 10)
-	%GridPlayArea.set_up_grid()
+	%GridPlayArea.set_up_walkable_grid()
+	%GridPlayArea.set_up_grid_walls()
 	
-	%AppleSpawner.grid_tiles = %GridPlayArea.grid_tiles
+	%AppleSpawner.g_tile_walkables = %GridPlayArea.g_tile_walkables
 	
 	%SnakeHead.global_position = %GridPlayArea.get_center_tile().global_position
 	%SnakeSegment.global_position = %SnakeHead.global_position - Vector2(distance_per_tile, 0)

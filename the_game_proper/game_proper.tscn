@@ -15,7 +15,7 @@ position = Vector2(576, 324)
 
 [node name="IntervalTimer" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 0.3
+wait_time = 0.1
 autostart = true
 
 [node name="SnakeHead" parent="." instance=ExtResource("3_c1pul")]

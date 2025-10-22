@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsacx1cevc3jj"]
+
+[ext_resource type="PackedScene" uid="uid://cbvgkw3n518oq" path="res://the_gridmap/grid_tile.tscn" id="1_xnmpi"]
+[ext_resource type="Script" uid="uid://cb6ojvsdmu4pt" path="res://the_gridmap/grid_tile_wall.gd" id="2_ssubu"]
+[ext_resource type="PackedScene" uid="uid://bsg2bu3bao02h" path="res://the_game_proper/anti_snake_hurtbox.tscn" id="3_ivwhc"]
+
+[node name="GridTileWall" instance=ExtResource("1_xnmpi")]
+script = ExtResource("2_ssubu")
+
+[node name="ColorRect" type="ColorRect" parent="GridTileDesign" index="0"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.025923017, 0.121321045, 0.2784491, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="GridTileDesign" index="1"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -23.0
+offset_right = 23.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0676246, 0.21071327, 0.44617206, 1)
+
+[node name="AntiSnakeHurtbox" parent="." index="2" instance=ExtResource("3_ivwhc")]

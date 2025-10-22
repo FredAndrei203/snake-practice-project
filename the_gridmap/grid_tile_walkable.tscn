@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxgemtlnjmgnx"]
+
+[ext_resource type="PackedScene" uid="uid://cbvgkw3n518oq" path="res://the_gridmap/grid_tile.tscn" id="1_6tjoi"]
+[ext_resource type="Script" uid="uid://cgc230r1s2143" path="res://the_gridmap/grid_tile_walkable.gd" id="2_bvqjw"]
+
+[node name="GridTileWalkable" instance=ExtResource("1_6tjoi")]
+script = ExtResource("2_bvqjw")
+
+[node name="ColorRect" type="ColorRect" parent="GridTileDesign" index="0"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.563657, 0.21311626, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="GridTileDesign" index="1"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -23.0
+offset_right = 23.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1840922, 0.99999994, 0.42903823, 1)

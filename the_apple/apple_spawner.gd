@@ -5,7 +5,7 @@ var apple_scene: PackedScene = preload("res://the_apple/apple.tscn")
 var max_apple_existing = 3
 var existing_apples: Array[Apple]
 
-var grid_tiles: Array[GridTile]
+var g_tile_walkables: Array[GridTileWalkable]
 
 func spawn_apples() -> void:
 	if existing_apples.size() >= max_apple_existing:
@@ -18,7 +18,7 @@ func spawn_apples() -> void:
 
 func place_apple_randomly(apple: Apple):
 	while(true):
-		var tile = grid_tiles.pick_random()
+		var tile = g_tile_walkables.pick_random()
 		if !tile.is_occupied:
 			apple.global_position = tile.global_position
 			return

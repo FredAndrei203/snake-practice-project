@@ -34,7 +34,6 @@ func add_new_part() -> void:
 		proceeding_part.add_new_part()
 	else:
 		var new_part: SnakeSegment = snake_segment_scene.instantiate()
-		print(owner)
 		owner.add_child(new_part)
 		new_part.owner = owner
 		proceeding_part = new_part
