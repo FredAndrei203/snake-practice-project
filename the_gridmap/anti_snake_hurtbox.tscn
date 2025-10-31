@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://brhxa64qdrskx"]
+[gd_scene load_steps=3 format=3 uid="uid://bsg2bu3bao02h"]
 
 [ext_resource type="Script" uid="uid://bos6yq2wb6pwy" path="res://the_gridmap/anti_snake_hurtbox.gd" id="1_mwwaw"]
 

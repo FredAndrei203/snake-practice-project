@@ -1,19 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://duguyn2xs1lw3"]
 
 [ext_resource type="PackedScene" uid="uid://desrd4yvv7q25" path="res://the_snake/snake_head.tscn" id="1_stl2s"]
-[ext_resource type="Script" path="res://the_snake/snake_head_v_2.gd" id="2_sl2g0"]
+[ext_resource type="Script" uid="uid://cc2yfrwfkiaks" path="res://the_snake/snake_head_v_2.gd" id="2_sl2g0"]
 
 [node name="SnakeHeadV2" instance=ExtResource("1_stl2s")]
 script = ExtResource("2_sl2g0")
-
-[node name="SnakePartDesign" parent="." index="0"]
-scale = Vector2(1, 1)
-
-[node name="CollisionShape2D" parent="." index="1"]
-scale = Vector2(1, 1)
-
-[node name="SnakeHitbox" parent="." index="2"]
-scale = Vector2(1, 1)
-
-[node name="CollisionShape2D" parent="SnakeHitbox" index="0"]
-scale = Vector2(1, 1)

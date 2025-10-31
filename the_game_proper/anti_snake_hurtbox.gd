@@ -1,1 +1,0 @@
-class_name AntiSnakeHurtbox extends Area2D

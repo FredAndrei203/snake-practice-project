@@ -7,7 +7,7 @@ func _ready() -> void:
 	direction_input = Vector2.RIGHT
 	current_direction = Vector2.RIGHT
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	_record_last_input()
 
 func _record_last_input() -> void:
@@ -22,8 +22,7 @@ func _record_last_input() -> void:
 		return
 	direction_input = latest_input
 
-
-func _on_game_proper_new_interval() -> void:
+func update_snake() -> void:
 	move_part()
 	order_proceeding_part()
 	if has_eaten_apple:
