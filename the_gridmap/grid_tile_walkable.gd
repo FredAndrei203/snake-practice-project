@@ -13,5 +13,6 @@ func _on_area_entered(area: Area2D) -> void:
 	%Label.text = "O"
 
 func _on_area_exited(_area: Area2D) -> void:
+	is_occupied = false
 	occupied_by = OccupiedBy.NONE
 	%Label.text = "X"
