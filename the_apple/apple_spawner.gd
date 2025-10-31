@@ -3,17 +3,17 @@ class_name AppleSpawner extends Node
 var apple_scene: PackedScene = preload("res://the_apple/apple.tscn")
 
 var max_apple_existing = 3
-var existing_apples: Array[Apple]
+var apple_count: int = 0
 
 var g_tile_walkables: Array[GridTileWalkable]
 
 func spawn_apples() -> void:
-	if existing_apples.size() >= max_apple_existing:
+	if apple_count >= max_apple_existing:
 		return
 	var new_apple: Apple = apple_scene.instantiate()
 	new_apple.apple_spawner = self
 	place_apple_on_play_area(new_apple)
-	existing_apples.append(new_apple)
+	apple_count += 1
 	owner.add_child(new_apple)
 
 func place_apple_on_play_area(apple: Apple):

@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://biw1im3m0838t" path="res://the_apple/apple_spawner.gd" id="5_q37bm"]
 [ext_resource type="Script" path="res://the_game_proper/PlayState.gd" id="6_5vmiu"]
 [ext_resource type="PackedScene" uid="uid://duguyn2xs1lw3" path="res://the_snake/snake_head_v_2.tscn" id="6_btsqw"]
-[ext_resource type="Script" path="res://the_apple/AppleSpawnerPredetermined.gd" id="7_btsqw"]
+[ext_resource type="Script" uid="uid://dk5ihu2h6m7kk" path="res://the_apple/AppleSpawnerPredetermined.gd" id="7_btsqw"]
 
 [node name="GameProper" type="Node2D"]
 script = ExtResource("1_yaumu")
