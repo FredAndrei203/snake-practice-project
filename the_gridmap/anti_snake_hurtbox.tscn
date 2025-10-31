@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://brhxa64qdrskx"]
+
+[ext_resource type="Script" uid="uid://bos6yq2wb6pwy" path="res://the_gridmap/anti_snake_hurtbox.gd" id="1_mwwaw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6cgc"]
+size = Vector2(50, 50)
+
+[node name="AntiSnakeHurtbox" type="Area2D"]
+script = ExtResource("1_mwwaw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i6cgc")
+debug_color = Color(0.9371436, 0.2524055, 5.7756904e-07, 0.41960785)
