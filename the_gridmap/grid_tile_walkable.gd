@@ -10,6 +10,8 @@ func _on_area_entered(area: Area2D) -> void:
 		occupied_by = OccupiedBy.SNAKE_PART
 	
 	is_occupied = true
+	%Label.text = "O"
 
 func _on_area_exited(_area: Area2D) -> void:
 	occupied_by = OccupiedBy.NONE
+	%Label.text = "X"
