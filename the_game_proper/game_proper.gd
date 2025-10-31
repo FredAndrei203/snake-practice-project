@@ -16,10 +16,6 @@ func _ready() -> void:
 	
 	#Initialize the snake
 	snake_head.global_position = %GridPlayArea.get_center_tile().global_position
-	%SnakeSegment.global_position = snake_head.global_position - Vector2(distance_per_tile, 0)
-	%SnakeSegment2.global_position = %SnakeSegment.global_position - Vector2(distance_per_tile,0)
-	snake_head.snake_segments.append(%SnakeSegment)
-	snake_head.snake_segments.append(%SnakeSegment2)
 
 func _on_interval_timer_timeout() -> void:
 	snake_head.update_snake()

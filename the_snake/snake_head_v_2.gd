@@ -23,7 +23,7 @@ func move_snake_body() -> void:
 func create_new_snake_segment() -> void:
 	var segment: SnakeSegment = segment_scene.instantiate()
 	owner.add_child(segment)
-	snake_segments.append(segment)
+	snake_segments.push_front(segment)
 	segment.global_position = last_position
 	segment.direction_input = last_direction
 	segment.snake_part_design.rotation = last_direction.angle()

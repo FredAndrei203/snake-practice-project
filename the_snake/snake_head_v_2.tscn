@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://nbwkyuhd1tho"]
+[gd_scene load_steps=3 format=3 uid="uid://duguyn2xs1lw3"]
 
 [ext_resource type="PackedScene" uid="uid://desrd4yvv7q25" path="res://the_snake/snake_head.tscn" id="1_stl2s"]
-[ext_resource type="Script" path="res://the_snake/snake_head_v_2.gd" id="2_sl2g0"]
+[ext_resource type="Script" uid="uid://cc2yfrwfkiaks" path="res://the_snake/snake_head_v_2.gd" id="2_sl2g0"]
 
 [node name="SnakeHeadV2" instance=ExtResource("1_stl2s")]
 script = ExtResource("2_sl2g0")
