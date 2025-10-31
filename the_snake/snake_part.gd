@@ -14,6 +14,7 @@ var proceeding_part: SnakePart:
 		proceeding_part.direction_input = direction_input
 		proceeding_part.current_direction = direction_input
 
+
 func move_part() -> void:
 	current_direction = direction_input
 	last_position = global_position
@@ -33,10 +34,13 @@ func add_new_part() -> void:
 	if proceeding_part != null:
 		proceeding_part.add_new_part()
 	else:
-		var new_part: SnakeSegment = snake_segment_scene.instantiate()
-		owner.add_child(new_part)
-		new_part.owner = owner
-		proceeding_part = new_part
-		new_part.global_position = last_position
-		new_part.direction_input = last_direction
-		new_part.snake_part_design.rotation = last_direction.angle()
+		add_proceeding_part()
+
+func add_proceeding_part() -> void:
+	var new_part: SnakeSegment = snake_segment_scene.instantiate()
+	owner.add_child(new_part)
+	new_part.owner = owner
+	proceeding_part = new_part
+	new_part.global_position = last_position
+	new_part.direction_input = last_direction
+	new_part.snake_part_design.rotation = last_direction.angle()

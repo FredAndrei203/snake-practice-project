@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqmcafhldiop1"]
+[gd_scene load_steps=8 format=3 uid="uid://bqmcafhldiop1"]
 
 [ext_resource type="Script" uid="uid://cjnhxtk7ucaef" path="res://the_game_proper/game_proper.gd" id="1_yaumu"]
 [ext_resource type="PackedScene" uid="uid://cl0p6pi3uj7di" path="res://the_gridmap/grid_play_area.tscn" id="2_poqan"]
-[ext_resource type="PackedScene" uid="uid://desrd4yvv7q25" path="res://the_snake/snake_head.tscn" id="3_c1pul"]
 [ext_resource type="PackedScene" uid="uid://073xy8ds4wuu" path="res://the_snake/snake_segment.tscn" id="4_5yf71"]
 [ext_resource type="Script" uid="uid://biw1im3m0838t" path="res://the_apple/apple_spawner.gd" id="5_q37bm"]
+[ext_resource type="Script" uid="uid://0grtn3rx0sr6" path="res://the_game_proper/PlayState.gd" id="6_5vmiu"]
+[ext_resource type="PackedScene" uid="uid://cffmbsv1n5i8h" path="res://the_snake/snake_head_v_2.tscn" id="6_btsqw"]
+[ext_resource type="Script" uid="uid://dk5ihu2h6m7kk" path="res://the_apple/AppleSpawnerPredetermined.gd" id="7_btsqw"]
 
 [node name="GameProper" type="Node2D"]
 script = ExtResource("1_yaumu")
@@ -15,10 +17,24 @@ position = Vector2(576, 324)
 
 [node name="IntervalTimer" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 0.1
+wait_time = 0.2
 autostart = true
 
-[node name="SnakeHead" parent="." instance=ExtResource("3_c1pul")]
+[node name="AppleSpawner" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_q37bm")
+metadata/_custom_type_script = "uid://biw1im3m0838t"
+
+[node name="PlayState" type="Node" parent="."]
+script = ExtResource("6_5vmiu")
+metadata/_custom_type_script = "uid://0grtn3rx0sr6"
+
+[node name="AppleSpawnerPredetermined" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("7_btsqw")
+metadata/_custom_type_script = "uid://dk5ihu2h6m7kk"
+
+[node name="SnakeHeadV2" parent="." instance=ExtResource("6_btsqw")]
 unique_name_in_owner = true
 
 [node name="SnakeSegment" parent="." instance=ExtResource("4_5yf71")]
@@ -27,12 +43,4 @@ unique_name_in_owner = true
 [node name="SnakeSegment2" parent="." instance=ExtResource("4_5yf71")]
 unique_name_in_owner = true
 
-[node name="AppleSpawner" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("5_q37bm")
-metadata/_custom_type_script = "uid://biw1im3m0838t"
-
-[connection signal="new_interval" from="." to="SnakeHead" method="_on_game_proper_new_interval"]
-[connection signal="post_interval" from="." to="AppleSpawner" method="_on_game_proper_post_interval"]
 [connection signal="timeout" from="IntervalTimer" to="." method="_on_interval_timer_timeout"]
-[connection signal="snake_died" from="SnakeHead" to="." method="_on_snake_head_snake_died"]
