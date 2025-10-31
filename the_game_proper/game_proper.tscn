@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cjnhxtk7ucaef" path="res://the_game_proper/game_proper.gd" id="1_yaumu"]
 [ext_resource type="PackedScene" uid="uid://cl0p6pi3uj7di" path="res://the_gridmap/grid_play_area.tscn" id="2_poqan"]
 [ext_resource type="Script" uid="uid://biw1im3m0838t" path="res://the_apple/apple_spawner.gd" id="5_q37bm"]
-[ext_resource type="Script" path="res://the_game_proper/PlayState.gd" id="6_5vmiu"]
+[ext_resource type="Script" uid="uid://0grtn3rx0sr6" path="res://the_game_proper/PlayState.gd" id="6_5vmiu"]
 [ext_resource type="PackedScene" uid="uid://duguyn2xs1lw3" path="res://the_snake/snake_head_v_2.tscn" id="6_btsqw"]
 [ext_resource type="Script" uid="uid://dk5ihu2h6m7kk" path="res://the_apple/AppleSpawnerPredetermined.gd" id="7_btsqw"]
 
