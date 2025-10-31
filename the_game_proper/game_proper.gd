@@ -15,7 +15,13 @@ func _ready() -> void:
 	apple_spawner.g_tile_walkables = %GridPlayArea.g_tile_walkables
 	
 	#Initialize the snake
-	snake_head.global_position = %GridPlayArea.get_center_tile().global_position
+	initialize_snake()
+
+func initialize_snake() -> void:
+	snake_head.global_position = %GridPlayArea.get_center_tile().global_position - Vector2(distance_per_tile * 3, 0)
+	for idx in range(2):
+		snake_head.has_eaten_apple = true
+		snake_head.update_snake()
 
 func _on_interval_timer_timeout() -> void:
 	snake_head.update_snake()
@@ -23,4 +29,8 @@ func _on_interval_timer_timeout() -> void:
 
 
 func _on_snake_head_snake_died() -> void:
+	%IntervalTimer.stop()
+
+
+func _on_snake_head_v_2_snake_died() -> void:
 	%IntervalTimer.stop()

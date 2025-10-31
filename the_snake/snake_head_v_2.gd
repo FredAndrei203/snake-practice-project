@@ -4,7 +4,6 @@ var segment_scene: PackedScene = preload("res://the_snake/snake_segment.tscn")
 
 var snake_segments: Array[SnakeSegment]
 
-
 func update_snake() -> void:
 	move_part()
 	if has_eaten_apple:

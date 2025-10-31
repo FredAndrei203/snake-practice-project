@@ -37,3 +37,4 @@ metadata/_custom_type_script = "uid://dk5ihu2h6m7kk"
 unique_name_in_owner = true
 
 [connection signal="timeout" from="IntervalTimer" to="." method="_on_interval_timer_timeout"]
+[connection signal="snake_died" from="SnakeHeadV2" to="." method="_on_snake_head_v_2_snake_died"]
