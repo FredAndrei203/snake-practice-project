@@ -7,7 +7,7 @@ static var distance_per_tile: float = 51
 
 func _ready() -> void:
 	#Set up play area
-	%GridPlayArea.grid_size = Vector2(10, 8)
+	%GridPlayArea.grid_size = Vector2(20, 10)
 	%GridPlayArea.set_up_walkable_grid()
 	%GridPlayArea.set_up_grid_walls()
 	
