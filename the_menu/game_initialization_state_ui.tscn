@@ -43,3 +43,16 @@ min_value = 1.0
 max_value = 10.0
 default_value = 1.0
 spinbox_suffix = "apples"
+
+[node name="BoxContainer" type="BoxContainer" parent="BoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="StartButton" type="Button" parent="BoxContainer/BoxContainer"]
+layout_mode = 2
+text = "Start Game"
+
+[node name="ReturnButton" type="Button" parent="BoxContainer/BoxContainer"]
+layout_mode = 2
+text = "Return"

@@ -14,10 +14,10 @@ grow_vertical = 2
 script = ExtResource("1_bqs0n")
 
 [node name="MenuInitialStateUI" parent="." instance=ExtResource("1_2fn5s")]
-visible = false
 layout_mode = 1
 
 [node name="GameInitializationStateUI" parent="." instance=ExtResource("2_bqs0n")]
+visible = false
 layout_mode = 1
 
 [connection signal="player_wants_to_play" from="MenuInitialStateUI" to="." method="_on_menu_initial_state_ui_player_wants_to_play"]
