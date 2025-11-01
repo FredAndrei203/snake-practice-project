@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dtdyrk8ol3bqm" path="res://the_snake/snake_part.tscn" id="1_tx6nt"]
 [ext_resource type="Script" uid="uid://cxa25mnvcwpaw" path="res://the_snake/snake_segment.gd" id="2_ton1m"]
 
-[node name="SnakeSegment" instance=ExtResource("1_tx6nt")]
+[node name="SnakeSegment" groups=["snake_segments"] instance=ExtResource("1_tx6nt")]
 script = ExtResource("2_ton1m")
 
 [node name="Segment" type="ColorRect" parent="SnakePartDesign" index="0"]

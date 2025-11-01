@@ -32,3 +32,9 @@ func create_new_snake_segment() -> void:
 	segment.global_position = last_position
 	segment.direction_input = last_direction
 	segment.snake_part_design.rotation = last_direction.angle()
+
+func reset_snake() -> void:
+	snake_segments.clear()
+	apples_eaten = 0
+	has_died = false
+	direction_input = Vector2.RIGHT

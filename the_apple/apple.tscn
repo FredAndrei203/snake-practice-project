@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bpemt"]
 size = Vector2(50, 50)
 
-[node name="Apple" type="Area2D"]
+[node name="Apple" type="Area2D" groups=["apples"]]
 script = ExtResource("1_3ed3y")
 
 [node name="ColorRect" type="ColorRect" parent="."]

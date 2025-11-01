@@ -8,6 +8,9 @@ var apple_count: int = 0
 var g_tile_walkables: Array[GridTileWalkable]
 var grid_play_area: GridPlayArea
 
+func reset_spawner() -> void:
+	apple_count = 0
+
 func spawn_apples() -> void:
 	if apple_count >= max_apple_existing or grid_play_area.tiles_occupied >= g_tile_walkables.size():
 		return

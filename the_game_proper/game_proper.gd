@@ -28,6 +28,15 @@ func initialize_snake() -> void:
 func start_round() -> void:
 	%IntervalTimer.start()
 
+func reset_round() -> void:
+	snake_head.reset_snake()
+	get_tree().call_group("snake_segments", "queue_free")
+	get_tree().call_group("apples", "queue_free")
+	initialize_snake()
+	%RoundEndUI.hide()
+	%AppleSpawner.reset_spawner()
+	start_round()
+
 func _on_interval_timer_timeout() -> void:
 	snake_head.update_snake()
 	apple_spawner.spawn_apples()
@@ -51,3 +60,11 @@ func _on_play_state_player_won() -> void:
 	%IntervalTimer.stop()
 	%RoundEndUI.show()
 	%RoundEndUI.message = "Player Won!"
+
+
+func _on_round_end_ui_exit_game_proper() -> void:
+	pass # Replace with function body.
+
+
+func _on_round_end_ui_play_again() -> void:
+	reset_round()

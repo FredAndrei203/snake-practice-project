@@ -1,5 +1,8 @@
 class_name RoundEndUI extends Control
 
+signal play_again
+signal exit_game_proper
+
 var message: String:
 	set(new_value):
 		message = new_value
@@ -7,8 +10,8 @@ var message: String:
 
 
 func _on_play_again_button_pressed() -> void:
-	pass # Replace with function body.
+	play_again.emit()
 
 
 func _on_menu_button_pressed() -> void:
-	pass # Replace with function body.
+	exit_game_proper.emit()

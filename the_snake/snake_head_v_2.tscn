@@ -5,6 +5,3 @@
 
 [node name="SnakeHeadV2" instance=ExtResource("1_stl2s")]
 script = ExtResource("2_sl2g0")
-
-[node name="SnakePartDesign" parent="." index="0"]
-modulate = Color(1, 1, 1, 0.8862745)

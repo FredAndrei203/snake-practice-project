@@ -42,3 +42,5 @@ visible = false
 [connection signal="player_won" from="PlayState" to="." method="_on_play_state_player_won"]
 [connection signal="ate_an_apple" from="SnakeHeadV2" to="." method="_on_snake_head_v_2_ate_an_apple"]
 [connection signal="snake_died" from="SnakeHeadV2" to="." method="_on_snake_head_v_2_snake_died"]
+[connection signal="exit_game_proper" from="CanvasLayer/RoundEndUI" to="." method="_on_round_end_ui_exit_game_proper"]
+[connection signal="play_again" from="CanvasLayer/RoundEndUI" to="." method="_on_round_end_ui_play_again"]
