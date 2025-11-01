@@ -30,10 +30,6 @@ func _on_interval_timer_timeout() -> void:
 	apple_spawner.spawn_apples()
 
 
-func _on_snake_head_snake_died() -> void:
-	%IntervalTimer.stop()
-
-
 func _on_snake_head_v_2_snake_died() -> void:
 	%IntervalTimer.stop()
 

@@ -2,6 +2,7 @@ class_name SnakeHead extends SnakePart
 
 signal snake_died
 var has_eaten_apple: bool = false
+var has_died: bool = false
 
 func _ready() -> void:
 	direction_input = Vector2.RIGHT
@@ -37,4 +38,5 @@ func _on_snake_hitbox_area_entered(area: Area2D) -> void:
 	if area is Apple:
 		has_eaten_apple = true
 	elif area is SnakeHitbox or area is AntiSnakeHurtbox:
+		has_died = true
 		snake_died.emit()
