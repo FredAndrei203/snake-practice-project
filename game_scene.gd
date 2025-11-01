@@ -1,3 +1,5 @@
 class_name GameScene extends Node
 
-var game_proper_scene: PackedScene = preload("res://the_game_proper/game_proper.tscn")
+
+func _on_main_menu_ui_enter_the_game(play_area_size: Vector2, tick_rate: float, apple_count: int) -> void:
+	var new_game: GameProper = GameProper.new(play_area_size, tick_rate, apple_count)

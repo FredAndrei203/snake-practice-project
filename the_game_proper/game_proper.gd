@@ -5,6 +5,9 @@ static var distance_per_tile: float = 51
 @onready var apple_spawner: AppleSpawner = %AppleSpawner
 @onready var snake_head: SnakeHeadV2 = %SnakeHeadV2
 
+func _init(grid_size: Vector2, tick_rate: float, apple_count: int) -> void:
+	pass
+
 func _ready() -> void:
 	#Set up play area
 	%GridPlayArea.grid_size = Vector2(4, 4)

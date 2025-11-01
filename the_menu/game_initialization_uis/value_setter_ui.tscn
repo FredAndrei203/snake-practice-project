@@ -24,3 +24,6 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 step = 1.0
+
+[connection signal="value_changed" from="SpinBox" to="." method="_on_spin_box_value_changed"]
+[connection signal="value_changed" from="HScrollBar" to="." method="_on_h_scroll_bar_value_changed"]

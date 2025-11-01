@@ -7,3 +7,5 @@
 script = ExtResource("1_mlf6e")
 
 [node name="MainMenuUI" parent="." instance=ExtResource("2_po0ka")]
+
+[connection signal="enter_the_game" from="MainMenuUI" to="." method="_on_main_menu_ui_enter_the_game"]

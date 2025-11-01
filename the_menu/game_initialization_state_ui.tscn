@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://lxwwls8x1d4c"]
+[gd_scene load_steps=4 format=3 uid="uid://lxwwls8x1d4c"]
 
 [ext_resource type="Script" uid="uid://s862amijhxfj" path="res://the_menu/game_initialization_state_ui.gd" id="1_58jx2"]
 [ext_resource type="PackedScene" uid="uid://ddm72evk1kvd4" path="res://the_menu/game_initialization_uis/play_area_init_ui.tscn" id="2_13jdp"]
 [ext_resource type="PackedScene" uid="uid://y4hsmt8l0vf7" path="res://the_menu/game_initialization_uis/value_setter_ui.tscn" id="3_7nt8r"]
-[ext_resource type="Script" uid="uid://b7ueblu5gpc7s" path="res://the_menu/game_initialization_uis/play_area_init_ui.gd" id="3_scqxh"]
 
 [node name="GameInitializationState" type="Control"]
 layout_mode = 3
@@ -26,10 +25,11 @@ alignment = 1
 vertical = true
 
 [node name="PlayAreaInitUI" parent="BoxContainer" instance=ExtResource("2_13jdp")]
+unique_name_in_owner = true
 layout_mode = 2
-script = ExtResource("3_scqxh")
 
 [node name="GameSpeedInitUI" parent="BoxContainer" instance=ExtResource("3_7nt8r")]
+unique_name_in_owner = true
 layout_mode = 2
 label_text = "Game update speed (ticks per second)"
 min_value = 0.5
@@ -39,6 +39,7 @@ default_value = 0.5
 spinbox_suffix = "ticks per second"
 
 [node name="AppleInitUI" parent="BoxContainer" instance=ExtResource("3_7nt8r")]
+unique_name_in_owner = true
 layout_mode = 2
 label_text = "Maximum number of apples allowed to exist"
 min_value = 1.0
@@ -52,9 +53,15 @@ theme_override_constants/separation = 50
 alignment = 1
 
 [node name="StartButton" type="Button" parent="BoxContainer/BoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+disabled = true
 text = "Start Game"
 
 [node name="ReturnButton" type="Button" parent="BoxContainer/BoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Return"
+
+[connection signal="has_selected_area_size" from="BoxContainer/PlayAreaInitUI" to="." method="_on_play_area_init_ui_has_selected_area_size"]
+[connection signal="pressed" from="BoxContainer/BoxContainer/StartButton" to="." method="_on_start_button_pressed"]

@@ -23,3 +23,4 @@ visible = false
 layout_mode = 1
 
 [connection signal="player_wants_to_play" from="MenuInitialStateUI" to="." method="_on_menu_initial_state_ui_player_wants_to_play"]
+[connection signal="relay_level_init" from="GameInitializationStateUI" to="." method="_on_game_initialization_state_ui_relay_level_init"]
