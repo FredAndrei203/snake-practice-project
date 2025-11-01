@@ -47,10 +47,13 @@ vertical_alignment = 1
 layout_mode = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="BoxContainer/BoxContainer"]
+[node name="PlayAgainButton" type="Button" parent="BoxContainer/BoxContainer"]
 layout_mode = 2
 text = "Play again"
 
-[node name="Button2" type="Button" parent="BoxContainer/BoxContainer"]
+[node name="MenuButton" type="Button" parent="BoxContainer/BoxContainer"]
 layout_mode = 2
 text = "Return to Menu"
+
+[connection signal="pressed" from="BoxContainer/BoxContainer/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
+[connection signal="pressed" from="BoxContainer/BoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
