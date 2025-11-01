@@ -8,7 +8,6 @@ alignment = 1
 vertical = true
 script = ExtResource("1_5rik1")
 label_text = "Place text here for description"
-spinbox_suffix = null
 
 [node name="Label" type="Label" parent="."]
 unique_name_in_owner = true

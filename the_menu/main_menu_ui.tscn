@@ -14,9 +14,11 @@ grow_vertical = 2
 script = ExtResource("1_bqs0n")
 
 [node name="MenuInitialStateUI" parent="." instance=ExtResource("1_2fn5s")]
+unique_name_in_owner = true
 layout_mode = 1
 
 [node name="GameInitializationStateUI" parent="." instance=ExtResource("2_bqs0n")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 1
 

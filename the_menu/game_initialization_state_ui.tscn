@@ -32,8 +32,10 @@ script = ExtResource("3_scqxh")
 [node name="GameSpeedInitUI" parent="BoxContainer" instance=ExtResource("3_7nt8r")]
 layout_mode = 2
 label_text = "Game update speed (ticks per second)"
+min_value = 0.5
 max_value = 20.0
 step = 0.1
+default_value = 0.5
 spinbox_suffix = "ticks per second"
 
 [node name="AppleInitUI" parent="BoxContainer" instance=ExtResource("3_7nt8r")]

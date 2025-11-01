@@ -1,6 +1,11 @@
 class_name MainMenuUI extends Control
 
-enum MenuStates {INITIAL_STATE, GAME_PROPER_PREPARATION}
+@onready var current_state: Control = %MenuInitialStateUI
+
+func _switch_state(new_state: Control) -> void:
+	current_state.hide()
+	current_state = new_state
+	current_state.show()
 
 func _on_menu_initial_state_ui_player_wants_to_play() -> void:
-	pass # Replace with function body.
+	_switch_state(%GameInitializationStateUI)
