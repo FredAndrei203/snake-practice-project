@@ -1,13 +1,19 @@
 class_name SnakeHeadV2 extends SnakeHead
 
+signal ate_an_apple
+
 var segment_scene: PackedScene = preload("res://the_snake/snake_segment.tscn")
 
 var snake_segments: Array[SnakeSegment]
 
+var apples_eaten: int = 0
+
 func update_snake() -> void:
 	move_part()
 	if has_eaten_apple:
+		apples_eaten += 1
 		has_eaten_apple = false
+		ate_an_apple.emit()
 		create_new_snake_segment()
 	else:
 		move_snake_body()

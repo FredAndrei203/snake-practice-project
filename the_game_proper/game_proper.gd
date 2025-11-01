@@ -8,9 +8,12 @@ static var distance_per_tile: float = 51
 func _initialize_round(grid_size: Vector2, tick_rate: float, apple_count: int) -> void:
 	%IntervalTimer.wait_time = 1 / tick_rate
 	%AppleSpawner.max_apple_existing = apple_count
+	%AppleSpawner.grid_play_area = %GridPlayArea
 	%GridPlayArea.grid_size = grid_size
 	%GridPlayArea.set_up_walkable_grid()
 	%GridPlayArea.set_up_grid_walls()
+	%PlayState.snake = %SnakeHeadV2
+	%PlayState.target_apples_eaten = %GridPlayArea.g_tile_walkables.size() - 1
 	#Give apple spawner reference to the walkable tiles
 	apple_spawner.g_tile_walkables = %GridPlayArea.g_tile_walkables
 	#Initialize the snake
@@ -31,7 +34,18 @@ func _on_interval_timer_timeout() -> void:
 
 
 func _on_snake_head_v_2_snake_died() -> void:
-	%IntervalTimer.stop()
+	%PlayState.check_conditions()
 
-func game_ended():
-	pass
+
+func _on_snake_head_v_2_ate_an_apple() -> void:
+	%PlayState.check_conditions()
+
+
+func _on_play_state_player_lost() -> void:
+	%IntervalTimer.stop()
+	print("Player lost")
+
+
+func _on_play_state_player_won() -> void:
+	%IntervalTimer.stop()
+	print("Player won")

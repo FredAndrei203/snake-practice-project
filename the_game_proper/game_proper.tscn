@@ -23,6 +23,7 @@ script = ExtResource("5_q37bm")
 metadata/_custom_type_script = "uid://biw1im3m0838t"
 
 [node name="PlayState" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("6_5vmiu")
 metadata/_custom_type_script = "uid://0grtn3rx0sr6"
 
@@ -30,4 +31,7 @@ metadata/_custom_type_script = "uid://0grtn3rx0sr6"
 unique_name_in_owner = true
 
 [connection signal="timeout" from="IntervalTimer" to="." method="_on_interval_timer_timeout"]
+[connection signal="player_lost" from="PlayState" to="." method="_on_play_state_player_lost"]
+[connection signal="player_won" from="PlayState" to="." method="_on_play_state_player_won"]
+[connection signal="ate_an_apple" from="SnakeHeadV2" to="." method="_on_snake_head_v_2_ate_an_apple"]
 [connection signal="snake_died" from="SnakeHeadV2" to="." method="_on_snake_head_v_2_snake_died"]

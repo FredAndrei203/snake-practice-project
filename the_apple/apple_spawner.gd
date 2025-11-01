@@ -6,9 +6,10 @@ var max_apple_existing = 3
 var apple_count: int = 0
 
 var g_tile_walkables: Array[GridTileWalkable]
+var grid_play_area: GridPlayArea
 
 func spawn_apples() -> void:
-	if apple_count >= max_apple_existing:
+	if apple_count >= max_apple_existing or grid_play_area.tiles_occupied >= g_tile_walkables.size():
 		return
 	var new_apple: Apple = apple_scene.instantiate()
 	new_apple.apple_spawner = self

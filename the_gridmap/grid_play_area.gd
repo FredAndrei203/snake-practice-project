@@ -7,6 +7,8 @@ var g_tile_walkables: Array[GridTileWalkable]
 var g_tile_walls: Array[GridTileWall]
 var grid_size: Vector2
 
+var tiles_occupied: int = 0
+
 func set_up_walkable_grid() -> void:
 	var tile_size: float = GameProper.distance_per_tile
 	var starting_point: Vector2 = global_position - (grid_size * tile_size) / 2 + Vector2(tile_size, tile_size) / 2
@@ -16,6 +18,7 @@ func set_up_walkable_grid() -> void:
 			add_child(new_tile)
 			new_tile.global_position = starting_point + Vector2(x, y) * tile_size
 			g_tile_walkables.append(new_tile)
+			new_tile.grid_container = self
 
 func set_up_grid_walls() -> void:
 	var tile_size: float = GameProper.distance_per_tile
