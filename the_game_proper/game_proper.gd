@@ -43,9 +43,11 @@ func _on_snake_head_v_2_ate_an_apple() -> void:
 
 func _on_play_state_player_lost() -> void:
 	%IntervalTimer.stop()
-	print("Player lost")
+	%RoundEndUI.show()
+	%RoundEndUI.message = "Player Lost..."
 
 
 func _on_play_state_player_won() -> void:
 	%IntervalTimer.stop()
-	print("Player won")
+	%RoundEndUI.show()
+	%RoundEndUI.message = "Player Won!"
