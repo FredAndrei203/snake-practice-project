@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgn5igaph2l7v"]
+
+[ext_resource type="Script" uid="uid://w61lv2vc5aqx" path="res://the_menu/menu_initial_state_ui.gd" id="1_j4xty"]
+
+[node name="MenuInitialStateUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j4xty")
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+vertical = true
+
+[node name="Label" type="Label" parent="BoxContainer"]
+layout_mode = 2
+text = "Snake"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="BoxContainer"]
+layout_mode = 2
+text = "Play Game"
+
+[node name="ExitButton" type="Button" parent="BoxContainer"]
+layout_mode = 2
+text = "Exit Game
+"
+
+[connection signal="pressed" from="BoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="BoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

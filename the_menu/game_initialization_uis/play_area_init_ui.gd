@@ -1,0 +1,1 @@
+class_name PlayAreaInitUI extends BoxContainer

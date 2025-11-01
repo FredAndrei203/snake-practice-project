@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://7lxp5xibuo2s"]
+
+[ext_resource type="PackedScene" uid="uid://bgn5igaph2l7v" path="res://the_menu/menu_initial_state_ui.tscn" id="1_2fn5s"]
+[ext_resource type="Script" uid="uid://jkt23urgl0vw" path="res://the_menu/main_menu_ui.gd" id="1_bqs0n"]
+[ext_resource type="PackedScene" uid="uid://lxwwls8x1d4c" path="res://the_menu/game_initialization_state_ui.tscn" id="2_bqs0n"]
+
+[node name="MainMenuUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bqs0n")
+
+[node name="MenuInitialStateUI" parent="." instance=ExtResource("1_2fn5s")]
+visible = false
+layout_mode = 1
+
+[node name="GameInitializationStateUI" parent="." instance=ExtResource("2_bqs0n")]
+layout_mode = 1
+
+[connection signal="player_wants_to_play" from="MenuInitialStateUI" to="." method="_on_menu_initial_state_ui_player_wants_to_play"]

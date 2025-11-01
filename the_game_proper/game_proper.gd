@@ -34,3 +34,6 @@ func _on_snake_head_snake_died() -> void:
 
 func _on_snake_head_v_2_snake_died() -> void:
 	%IntervalTimer.stop()
+
+func game_ended():
+	pass

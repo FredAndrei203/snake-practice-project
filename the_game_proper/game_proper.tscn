@@ -16,7 +16,7 @@ position = Vector2(576, 324)
 
 [node name="IntervalTimer" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 0.5
+wait_time = 0.3
 autostart = true
 
 [node name="AppleSpawner" type="Node" parent="."]
