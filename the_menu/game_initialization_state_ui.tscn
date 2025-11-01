@@ -35,7 +35,7 @@ label_text = "Game update speed (ticks per second)"
 min_value = 0.5
 max_value = 20.0
 step = 0.1
-default_value = 0.5
+default_value = 3.3
 spinbox_suffix = "ticks per second"
 
 [node name="AppleInitUI" parent="BoxContainer" instance=ExtResource("3_7nt8r")]
@@ -44,7 +44,7 @@ layout_mode = 2
 label_text = "Maximum number of apples allowed to exist"
 min_value = 1.0
 max_value = 10.0
-default_value = 1.0
+default_value = 3.0
 spinbox_suffix = "apples"
 
 [node name="BoxContainer" type="BoxContainer" parent="BoxContainer"]
@@ -55,7 +55,6 @@ alignment = 1
 [node name="StartButton" type="Button" parent="BoxContainer/BoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-disabled = true
 text = "Start Game"
 
 [node name="ReturnButton" type="Button" parent="BoxContainer/BoxContainer"]
@@ -63,5 +62,4 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Return"
 
-[connection signal="has_selected_area_size" from="BoxContainer/PlayAreaInitUI" to="." method="_on_play_area_init_ui_has_selected_area_size"]
 [connection signal="pressed" from="BoxContainer/BoxContainer/StartButton" to="." method="_on_start_button_pressed"]

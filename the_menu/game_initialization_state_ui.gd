@@ -12,9 +12,6 @@ func start_game() -> void:
 	var apple_count: int = int(apple_init_ui.obtain_value())
 	relay_level_init.emit(play_area_size, tick_rate, apple_count)
 
-func _on_play_area_init_ui_has_selected_area_size() -> void:
-	%StartButton.disabled = false
-
 
 func _on_start_button_pressed() -> void:
 	start_game()

@@ -1,9 +1,10 @@
 class_name PlayAreaInitUI extends BoxContainer
 
-signal has_selected_area_size
-
 @onready var choices: ItemList = %PlayAreaSizeList
-var selected_item:  = -1
+var selected_item:  = 2
+
+func _ready() -> void:
+	choices.select(2)
 
 func get_player_choice() -> Vector2:
 	var item_text: String = choices.get_item_text(selected_item)
@@ -19,4 +20,3 @@ func get_player_choice() -> Vector2:
 
 func _on_play_area_size_list_item_selected(index: int) -> void:
 	selected_item = index
-	has_selected_area_size.emit()

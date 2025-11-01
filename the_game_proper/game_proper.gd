@@ -5,18 +5,14 @@ static var distance_per_tile: float = 51
 @onready var apple_spawner: AppleSpawner = %AppleSpawner
 @onready var snake_head: SnakeHeadV2 = %SnakeHeadV2
 
-func _init(grid_size: Vector2, tick_rate: float, apple_count: int) -> void:
-	pass
-
-func _ready() -> void:
-	#Set up play area
-	%GridPlayArea.grid_size = Vector2(4, 4)
+func _initialize_round(grid_size: Vector2, tick_rate: float, apple_count: int) -> void:
+	%IntervalTimer.wait_time = 1 / tick_rate
+	%AppleSpawner.max_apple_existing = apple_count
+	%GridPlayArea.grid_size = grid_size
 	%GridPlayArea.set_up_walkable_grid()
 	%GridPlayArea.set_up_grid_walls()
-	
 	#Give apple spawner reference to the walkable tiles
 	apple_spawner.g_tile_walkables = %GridPlayArea.g_tile_walkables
-	
 	#Initialize the snake
 	initialize_snake()
 
@@ -25,6 +21,9 @@ func initialize_snake() -> void:
 	for idx in range(2):
 		snake_head.has_eaten_apple = true
 		snake_head.update_snake()
+
+func start_round() -> void:
+	%IntervalTimer.start()
 
 func _on_interval_timer_timeout() -> void:
 	snake_head.update_snake()
