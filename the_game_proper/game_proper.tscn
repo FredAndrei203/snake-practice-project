@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqmcafhldiop1"]
+[gd_scene load_steps=8 format=3 uid="uid://bqmcafhldiop1"]
 
 [ext_resource type="Script" uid="uid://cjnhxtk7ucaef" path="res://the_game_proper/game_proper.gd" id="1_yaumu"]
 [ext_resource type="PackedScene" uid="uid://cl0p6pi3uj7di" path="res://the_gridmap/grid_play_area.tscn" id="2_poqan"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://0grtn3rx0sr6" path="res://the_game_proper/PlayState.gd" id="6_5vmiu"]
 [ext_resource type="PackedScene" uid="uid://duguyn2xs1lw3" path="res://the_snake/snake_head_v_2.tscn" id="6_btsqw"]
 [ext_resource type="PackedScene" uid="uid://jetcq34r4ey2" path="res://round_end_ui.tscn" id="6_xdxmy"]
+[ext_resource type="PackedScene" uid="uid://cafvbq2q3v2yv" path="res://the_game_proper/pause_ui.tscn" id="7_btsqw"]
 
 [node name="GameProper" type="Node2D"]
 script = ExtResource("1_yaumu")
@@ -37,6 +38,9 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 visible = false
 
+[node name="PauseUI" parent="CanvasLayer" instance=ExtResource("7_btsqw")]
+visible = false
+
 [connection signal="timeout" from="IntervalTimer" to="." method="_on_interval_timer_timeout"]
 [connection signal="player_lost" from="PlayState" to="." method="_on_play_state_player_lost"]
 [connection signal="player_won" from="PlayState" to="." method="_on_play_state_player_won"]
@@ -44,3 +48,7 @@ visible = false
 [connection signal="snake_died" from="SnakeHeadV2" to="." method="_on_snake_head_v_2_snake_died"]
 [connection signal="exit_game_proper" from="CanvasLayer/RoundEndUI" to="." method="_on_round_end_ui_exit_game_proper"]
 [connection signal="play_again" from="CanvasLayer/RoundEndUI" to="." method="_on_round_end_ui_play_again"]
+[connection signal="cancel_current_session" from="CanvasLayer/PauseUI" to="." method="_on_pause_ui_cancel_current_session"]
+[connection signal="continue_game" from="CanvasLayer/PauseUI" to="." method="_on_pause_ui_continue_game"]
+[connection signal="pause_game" from="CanvasLayer/PauseUI" to="." method="_on_pause_ui_pause_game"]
+[connection signal="restart_game" from="CanvasLayer/PauseUI" to="." method="_on_pause_ui_restart_game"]

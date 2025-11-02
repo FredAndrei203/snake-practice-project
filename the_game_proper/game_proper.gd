@@ -70,3 +70,19 @@ func _on_round_end_ui_exit_game_proper() -> void:
 
 func _on_round_end_ui_play_again() -> void:
 	reset_round()
+
+
+func _on_pause_ui_cancel_current_session() -> void:
+	game_session_done.emit()
+
+
+func _on_pause_ui_continue_game() -> void:
+	%IntervalTimer.paused = false
+
+
+func _on_pause_ui_pause_game() -> void:
+	%IntervalTimer.paused = true
+
+
+func _on_pause_ui_restart_game() -> void:
+	reset_round()
