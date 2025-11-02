@@ -1,5 +1,7 @@
 class_name GameProper extends Node2D
 
+signal game_session_done
+
 static var distance_per_tile: float = 51
 
 @onready var apple_spawner: AppleSpawner = %AppleSpawner
@@ -63,7 +65,7 @@ func _on_play_state_player_won() -> void:
 
 
 func _on_round_end_ui_exit_game_proper() -> void:
-	pass # Replace with function body.
+	game_session_done.emit()
 
 
 func _on_round_end_ui_play_again() -> void:
